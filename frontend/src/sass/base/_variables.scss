@@ -29,7 +29,7 @@ $grays: map-merge(
         '600': $gray-600,
         '700': $gray-700,
         '800': $gray-800,
-        '900': $gray-900
+        '900': $gray-900,
     ),
     $grays
 );
@@ -60,7 +60,7 @@ $colors: map-merge(
         'cyan': $cyan,
         'white': $white,
         'gray': $gray-600,
-        'gray-dark': $gray-800
+        'gray-dark': $gray-800,
     ),
     $colors
 );
@@ -84,7 +84,7 @@ $theme-colors: map-merge(
         'warning': $warning,
         'danger': $danger,
         'light': $light,
-        'dark': $dark
+        'dark': $dark,
     ),
     $theme-colors
 );
@@ -125,18 +125,18 @@ $spacers: map-merge(
     (
         0: 0,
         1: (
-            $spacer * 0.25
+            $spacer * 0.25,
         ),
         2: (
-            $spacer * 0.5
+            $spacer * 0.5,
         ),
         3: $spacer,
         4: (
-            $spacer * 1.5
+            $spacer * 1.5,
         ),
         5: (
-            $spacer * 3
-        )
+            $spacer * 3,
+        ),
     ),
     $spacers
 );
@@ -149,7 +149,7 @@ $sizes: map-merge(
         50: 50%,
         75: 75%,
         100: 100%,
-        auto: auto
+        auto: auto,
     ),
     $sizes
 );
@@ -186,7 +186,7 @@ $grid-breakpoints: (
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1200px
+    xl: 1200px,
 ) !default;
 @include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
 @include _assert-starts-at-zero($grid-breakpoints);
@@ -199,7 +199,7 @@ $container-max-widths: (
     sm: 540px,
     md: 720px,
     lg: 960px,
-    xl: 1140px
+    xl: 1140px,
 ) !default;
 @include _assert-ascending($container-max-widths, '$container-max-widths');
 
@@ -243,7 +243,7 @@ $transition-collapse: height 0.35s ease !default;
 
 // stylelint-disable value-keyword-case
 $font-path: '../fonts/' !default;
-$font-family-sans-serif: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-family-sans-serif: roboto, 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 $font-family-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -527,7 +527,7 @@ $file-ui-button-bg: $input-group-addon-bg !default;
 $file-ui-text: (
     en: 'Browse',
     es: 'Elegir',
-    vi: 'Duyệt'
+    vi: 'Duyệt',
 ) !default;
 
 // Form validation
