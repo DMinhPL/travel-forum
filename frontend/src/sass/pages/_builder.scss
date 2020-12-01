@@ -1,0 +1,388 @@
+#preloaded-rows {
+    display: none;
+}
+#preloaded-export {
+    display: none;
+}
+#preloaded-download {
+    display: none;
+}
+.builder {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 20px 40px 60px 20px;
+    overflow: hidden;
+    overflow: auto;
+    &__buttons {
+        width: 100%;
+        @include clearfix();
+        .btn {
+            i {
+                margin-left: 10px;
+            }
+            + .btn {
+                margin-left: 5px;
+            }
+        }
+        &__add {
+            position: relative;
+        }
+        &__reset {
+            float: right;
+        }
+        &__dropdown {
+            position: absolute;
+            top: 100%;
+            left: -1px;
+            z-index: 1;
+            display: none;
+            width: 150px;
+            text-align: left;
+            background-color: rgba(51, 51, 51, 1);
+            &__tab {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                -webkit-transition: background 0.5s;
+                -moz-transition: background 0.5s;
+                -o-transition: background 0.5s;
+                transition: background 0.5s;
+                i {
+                    float: right;
+                    margin-right: 10px;
+                    line-height: 30px;
+                }
+                p {
+                    float: left;
+                    padding: 0;
+                    margin-top: 0;
+                    margin-right: 0;
+                    margin-bottom: 0;
+                    margin-left: 12px;
+                    font-size: 14px;
+                }
+                &.current,
+                &:hover {
+                    background-color: rgba(153, 153, 153, 0.2);
+                }
+            }
+        }
+        &__content {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            z-index: 1;
+            display: none;
+            width: 690px;
+            height: 500px;
+            padding-bottom: 50px;
+            overflow-y: scroll;
+            cursor: default;
+            background-color: rgba(70, 70, 70, 1);
+            &__tab {
+                &__item {
+                    position: relative;
+                    width: 590px;
+                    margin-top: 30px;
+                    margin-left: 50px;
+                    img {
+                        width: 590px;
+                        -webkit-transition: all 0.5s;
+                        -moz-transition: all 0.5s;
+                        -o-transition: all 0.5s;
+                        transition: all 0.5s;
+                    }
+                    &__add {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        opacity: 0;
+                        transform: translate(-50%, -50%);
+                        @include transition();
+                    }
+                    &:hover {
+                        img {
+                            opacity: 0.6;
+                        }
+                        .builder__buttons__content__tab__item__add {
+                            box-shadow: 0 0 30px rgba($black, 0.1);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__icons {
+        margin: 0 -10px;
+        i {
+            width: 5%;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 3px;
+            @include transition();
+            &:hover {
+                background-color: rgba($black, 0.2);
+            }
+            &.selected {
+                color: #fff;
+                background: $primary;
+            }
+        }
+    }
+}
+#builder-content {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: rgba(153, 153, 153, 1);
+    .section {
+        position: relative;
+        transition: box-shadow 0.5s;
+        &[style*='position: relative;'] {
+            z-index: 0 !important;
+            &:hover {
+                z-index: 1 !important;
+            }
+        }
+        &__delete {
+            position: absolute;
+            top: 0;
+            right: -40px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            color: rgba(102, 102, 102, 1);
+            text-align: center;
+            background-color: rgba(#fff, 0.5);
+            opacity: 0;
+            transition: all 0.5s;
+            i {
+                line-height: 40px;
+            }
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+                cursor: pointer;
+                background-color: rgba(255, 0, 0, 1);
+            }
+        }
+        &:hover {
+            z-index: 1;
+            cursor: move;
+            box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
+            .section__delete {
+                opacity: 1;
+            }
+        }
+    }
+}
+[data-edit] {
+    position: relative;
+    .section__edit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: default;
+        background-color: rgba(63, 141, 191, 0.8);
+        transition: all 0.5s;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+            margin-left: -15px;
+            font-size: 16px;
+            line-height: 30px;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            border-radius: 50%;
+            transition: all 0.5s;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+// Modal
+.sim-edit {
+    position: fixed;
+    z-index: 2;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}
+.sim-edit-box {
+    display: none;
+    width: 400px;
+    height: 300px;
+    padding: 25px;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+.sim-edit-box-title {
+    float: left;
+    width: 100%;
+    font-size: 25px;
+    color: rgba(153, 153, 153, 1);
+}
+.sim-edit-box-content-text span {
+    font-size: 13px;
+    color: rgba(153, 153, 153, 1);
+}
+.sim-edit-box-content {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.sim-edit-box-content-text {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(102, 102, 102, 1);
+}
+.sim-edit-box-content-field {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+}
+.sim-edit-box-content-field-input {
+    float: left;
+    width: 380px;
+    height: 33px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    color: rgba(102, 102, 102, 1);
+    border: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.sim-edit-box-content-field-input:focus {
+    -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.sim-edit-box-content-field-textarea {
+    float: left;
+    width: 380px;
+    height: 180px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    color: rgba(102, 102, 102, 1);
+    resize: none;
+    border: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.sim-edit-box-content-field-textarea:focus {
+    -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.sim-edit-box-content-icons {
+    float: left;
+    width: 388px;
+    height: 388px;
+    margin-top: 15px;
+    overflow-y: scroll;
+    border: 1px solid rgba(204, 204, 204, 1);
+}
+.sim-edit-box-content-icons i {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 28px;
+    line-height: 50px;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    background-color: rgba(225, 225, 225, 1);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.sim-edit-box-content-icons i:hover {
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    background-color: rgba(153, 153, 153, 1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.sim-edit-box-buttons {
+    float: left;
+    width: 100%;
+    margin-top: 35px;
+}
+.sim-edit-box-buttons-save {
+    float: left;
+    height: 35px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 35px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(63, 141, 191, 1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+    -o-transition: background 0.5s;
+    transition: background 0.5s;
+    &:hover {
+        background-color: rgba(51, 175, 222, 1);
+    }
+}
+.sim-edit-box-buttons-cancel {
+    float: left;
+    height: 33px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 33px;
+    color: rgba(84, 101, 122, 1);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #e4e4e5;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+    -o-transition: background 0.5s;
+    transition: background 0.5s;
+    &:hover {
+        background-color: rgba(153, 153, 153, 0.1);
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "jquery": true,
+        "node": true,
+        "es6": true,
+        "commonjs": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": "error",
+        "eqeqeq": "off",
+        "curly": ["error", "multi"],
+        "quotes": ["error", "single"],
+        "no-unused-expressions": "error",
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-cond-assign": ["error", "always"],
+        "no-console": "warn",
+        "no-alert": "error",
+        "no-var": "error",
+        "no-undef": "error",
+        "comma-dangle": "off",
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ]
+    },
+    "globals": {
+        "$": true
+    }
+}
