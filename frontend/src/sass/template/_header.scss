@@ -1,1 +1,103 @@
-/* Comment here */
+.nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    margin: 0 auto;
+}
+.navbar {
+    $root: &;
+    padding: 0.5rem 0;
+    &-brand {
+        font-size: rem(31);
+    }
+    &-light {
+        #{$root}-brand {
+            color: #fff;
+            &:hover {
+                color: #fff;
+            }
+        }
+        #{$root}-nav {
+            .show,
+            .active {
+                & > .nav-link {
+                    color: #fff;
+                }
+            }
+            .nav-link {
+                font-size: 16px;
+                font-weight: 300;
+                color: #fff;
+                &:hover,
+                &:focus {
+                    color: #fff;
+                    outline: none;
+                }
+                span {
+                    font-size: rem(18);
+                }
+            }
+        }
+        #{$root}-toggler {
+            color: #fff;
+            border: none;
+            outline: 0;
+            span {
+                font-size: rem(30);
+            }
+        }
+    }
+    &-nav {
+        @include media-breakpoint-down(lg) {
+            padding: rem(7) rem(20);
+        }
+    }
+}
+.nav-item {
+    margin: 0 rem(20) 0 0;
+    span {
+        margin: 0 0 0 4px;
+        font-size: rem(10);
+    }
+}
+.bg {
+    width: 100%;
+    height: rem(70);
+}
+.is-sticky {
+    background: #252a33;
+    opacity: 1;
+}
+.transition {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid #636363;
+    @include media-breakpoint-down(lg) {
+        background: #252a33;
+        border: none;
+    }
+}
+
+// Dropdown Menu
+.dropdown-menu {
+    background: #030303;
+}
+.dropdown-item {
+    color: #aaa;
+    transition: 0.3s;
+    &:hover {
+        color: #fff;
+        background: none;
+    }
+}

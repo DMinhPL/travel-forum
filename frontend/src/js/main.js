@@ -5,7 +5,7 @@ function ui() {
     $('.select-ui').each(function() {
         const el = $(this);
         const selectUI = el.select2({
-            placeholder: el.data('placeholder')
+            placeholder: el.data('placeholder'),
         });
 
         // Update UI Scroll - Open dropdown
@@ -92,7 +92,7 @@ function gotoTop() {
     topTop.click(function() {
         $('body,html').animate(
             {
-                scrollTop: 0
+                scrollTop: 0,
             },
             500
         );
@@ -119,3 +119,18 @@ $('body').imagesLoaded(function() {
     $('body').addClass('loaded');
     $('.pageLoad').fadeOut();
 });
+
+(function($) {
+    function scrollMenuHeader() {
+        const $navContainer = $('header.nav-menu .container-fluid');
+        $(window).on('scroll', () => {
+            const scrollDistance = $(window).scrollTop();
+            if (scrollDistance > 80) {
+                $navContainer.addClass('is-sticky');
+            } else $navContainer.removeClass('is-sticky');
+        });
+    }
+    $(function() {
+        scrollMenuHeader();
+    });
+})(jQuery);

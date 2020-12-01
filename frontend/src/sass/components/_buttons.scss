@@ -126,3 +126,30 @@ input[type='button'] {
         width: 100%;
     }
 }
+.btn-group {
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+    @include media-breakpoint-up(md) {
+        display: inline-flex;
+    }
+}
+.btn-form {
+    width: 27%;
+    padding: rem(17);
+    font-size: rem(18);
+    font-weight: 400;
+    color: #fff;
+    background: #ff3a6d;
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    @include media-breakpoint-down(md) {
+        width: auto;
+    }
+    @include media-breakpoint-down(sm) {
+        width: auto;
+        width: 100%;
+        border-radius: 3px;
+    }
+}

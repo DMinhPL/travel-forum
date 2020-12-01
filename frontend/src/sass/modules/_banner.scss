@@ -1,0 +1,36 @@
+.s-bannerHome {
+    min-height: rem(800);
+    background: url($img-pathOrigin+'slider.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include media-breakpoint-down(lg) {
+        min-height: rem(700);
+    }
+    &-title_box {
+        text-align: center;
+    }
+    &-content {
+        &_wrap {
+            h2 {
+                font-size: rem(52);
+                font-weight: 300;
+                color: #fff;
+                @include media-breakpoint-up(xl) {
+                    font-size: rem(72);
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(40);
+                }
+            }
+            h5 {
+                margin: 24px 0;
+                font-size: rem(28);
+                font-weight: 400;
+                color: #909090;
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(22);
+                }
+            }
+        }
+    }
+}
