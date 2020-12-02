@@ -130,7 +130,18 @@ $('body').imagesLoaded(function() {
             } else $navContainer.removeClass('is-sticky');
         });
     }
+    function gridMasonry() {
+        $('.gridGallery').masonry({
+            itemSelector: '.gridGallery_item',
+            // columnWidth: 200,
+            gutter: 14,
+            percentPosition: true,
+            columnWidth: '.gridGallery-sizer',
+            resize: true,
+        });
+    }
     $(function() {
         scrollMenuHeader();
+        gridMasonry();
     });
 })(jQuery);

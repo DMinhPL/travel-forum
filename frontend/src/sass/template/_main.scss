@@ -4,3 +4,133 @@
     text-align: center;
     background-color: #fff;
 }
+/* Common style */
+.gridGallery {
+    position: relative;
+    padding: 1em 0 4em;
+    margin: 0 auto;
+    text-align: center;
+    list-style: none;
+    &_item {
+        width: calc(33.33333% - 14px);
+        margin-bottom: rem(14);
+        @include media-breakpoint-down(md) {
+            width: calc(50% - 14px);
+        }
+        &-vertical {
+            figure {
+                padding-bottom: 167.58571%;
+            }
+        }
+        &-topBig {
+            figure {
+                padding-bottom: 363/350 * 100%;
+            }
+        }
+        &-topSmall {
+            figure {
+                padding-bottom: 192/350 * 100%;
+            }
+        }
+        &-botSmall {
+            figure {
+                padding-bottom: 59.9%;
+            }
+        }
+        &-botBig {
+            figure {
+                padding-bottom: 381/350 * 100%;
+            }
+        }
+    }
+    &-sizer {
+        width: calc(33.33333% - 14px);
+        @include media-breakpoint-down(md) {
+            width: calc(50% - 14px);
+        }
+    }
+    figure {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+        background: #3085a3;
+        &.effect-ruby {
+            background-color: #000;
+            img {
+                transition: opacity 0.35s, transform 0.35s;
+                transform: scale(1.15);
+            }
+            &:hover img {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            h2 {
+                margin-top: 20%;
+                transition: transform 0.35s;
+                transform: translate3d(0, 20px, 0);
+            }
+            &:hover h2 {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 2em;
+            color: #fff;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            @include media-breakpoint-down(md) {
+                padding: 0.7em;
+            }
+            h5 {
+                font-weight: 400;
+                text-align: left;
+                @include media-breakpoint-down(md) {
+                    font-size: rem(22);
+                }
+            }
+            &::before,
+            &::after {
+                pointer-events: none;
+            }
+            > a {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1000;
+                font-size: 0;
+                text-indent: 200%;
+                white-space: nowrap;
+                opacity: 0;
+            }
+        }
+        h5 {
+            margin: 0;
+            font-weight: 300;
+            word-spacing: -0.15em;
+            span {
+                font-weight: 800;
+            }
+        }
+        p {
+            margin: 0;
+            margin: 6px 0 0;
+            font-weight: 300;
+            text-align: left;
+            letter-spacing: 1px;
+        }
+    }
+}

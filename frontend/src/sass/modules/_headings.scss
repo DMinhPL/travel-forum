@@ -1,1 +1,24 @@
 /* Comment here */
+.titleSection {
+    &_heading {
+        margin: 0 0 rem(50);
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            margin: 0 0 rem(30);
+        }
+        h3 {
+            position: relative;
+            padding: 0 0 rem(23);
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: rem(60);
+                height: 3px;
+                content: '';
+                background: #ff3a6d;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

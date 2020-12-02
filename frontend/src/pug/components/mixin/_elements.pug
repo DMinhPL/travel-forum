@@ -62,3 +62,10 @@ mixin blockquote-center(text,footer,author,style)
 mixin blockquote-right(text,footer,author,style)
 	- var style = ' ' + style || ''
 	+blockquote(text,footer,author,'text-right' + style)
+
+mixin titleSection(title)
+	.titleSection
+		.row.justify-content-center
+			.col-md-5
+				.titleSection_heading
+					h3 #[=title]

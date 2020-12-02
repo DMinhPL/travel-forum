@@ -1,0 +1,45 @@
+section.s-section_main
+    - 
+        var gallery = [
+            {
+                type:'vertical',
+                title:'Nightlife',
+                listings:'385 listings',
+                srcImg:'/images/find1.jpg'
+            },
+            {
+                type:'topBig',
+                title:'Restaurant',
+                listings:'210 listings',
+                srcImg:'/images/find2.jpg'
+            },
+            {
+                type:'topSmall',
+                title:'Hotel',
+                listings:'577 listings',
+                srcImg:'/images/find4.jpg'
+            },
+            {
+                type:'botBig',
+                title:'Art&Culture',
+                listings:'79 listings',
+                srcImg:'/images/find5.jpg'
+            },
+            {
+                type:'botSmall',
+                title:'Outdoors',
+                listings:'114 listings',
+                srcImg:'/images/find3.jpg'
+            },
+        ]
+    .container
+        +titleSection('What do you need to find?')
+        .gridGallery
+            .gridGallery-sizer
+            each val,idx in gallery
+                .gridGallery_item(class=`gridGallery_item-${val.type}`)
+                    figure.effect-ruby
+                        img(src=val.srcImg, alt="gallery")
+                        figcaption
+                            h5 #[=val.title]
+                            p #[=val.listings]
