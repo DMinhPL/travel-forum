@@ -1,5 +1,12 @@
+@mixin paddingSection() {
+    padding: rem(90) 0;
+}
 .s-section {
     &_main {
-        padding: rem(90) 0;
+        @include paddingSection();
+    }
+    &_featured {
+        @include paddingSection();
+        background: #f3f4f7;
     }
 }

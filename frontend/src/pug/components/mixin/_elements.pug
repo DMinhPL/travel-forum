@@ -69,3 +69,28 @@ mixin titleSection(title)
 			.col-md-5
 				.titleSection_heading
 					h3 #[=title]
+mixin featuredPanel(data)
+	.featuredPanel
+		.featuredPanel_wrapper
+			if data && data.length > 0
+				each dt, idx in data
+					.featuredPanel_item
+						.featuredPanel_rating #[=dt.rating]
+						.featuredPanel_item_wrap
+							.featuredPanel_item_img
+								+img-bg(dt.srcImg,'thumbnail','','#')
+							.featuredPanel_item_content
+								a(href="#").featuredPanel_item-link #[=dt.place]
+								p Restaurant • 3 Reviews • $$$$$
+								ul
+									li
+										i.icon.ic-marker
+										span #[=dt.location]
+									li 
+										i.icon.ic-smartphone
+										span #[=dt.phone]
+									li 
+										i.icon.ic-link
+										span #[=dt.link]
+								.bottom-icons(class=dt.status==='Close Now'?'close':'open')
+									p #[=dt.status]

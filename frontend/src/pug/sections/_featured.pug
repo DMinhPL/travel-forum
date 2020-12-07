@@ -1,0 +1,64 @@
+section.s-section_featured
+    - 
+        var dtFeatured = [
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature1.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature2.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'8.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature3.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Open Now',
+                rating:'9.0'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature4.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Open Now',
+                rating:'7.0'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature5.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature6.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+        ]
+    .container
+        +titleSection('Featured Places')
+        +featuredPanel(dtFeatured)
+        .featuredPanel_viewMore
+            a(href="#").btn-custom Xem thêm
+        

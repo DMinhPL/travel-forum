@@ -1,6 +1,6 @@
 // Sample code
 .masthead {
-    padding: 200px 0;
+    padding: rem(200) 0;
     text-align: center;
     background-color: #fff;
 }
@@ -132,5 +132,117 @@
             text-align: left;
             letter-spacing: 1px;
         }
+    }
+}
+.featuredPanel {
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: rem(-10);
+        margin-left: rem(-10);
+    }
+    &_rating {
+        position: absolute;
+        right: 10px;
+        z-index: 10;
+        width: 60px;
+        height: 60px;
+        padding: 14px;
+        margin: -33px 10px 0 0;
+        font-size: 23px;
+        color: #fff;
+        text-align: center;
+        background: #ff7474;
+        border-radius: 50%;
+    }
+    &_item {
+        position: relative;
+        width: 100%;
+        padding-right: rem(10);
+        padding-left: rem(10);
+        margin-bottom: rem(30);
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 33.33333% !important;
+            max-width: 33.33333% !important;
+        }
+        @include media-breakpoint-up(md) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        &-link {
+            margin-bottom: 5px;
+            overflow: hidden;
+            font-size: rem(20);
+            font-weight: 700;
+            color: #000;
+            text-decoration: none !important;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: 0.4s ease;
+            &:hover {
+                color: #212259;
+            }
+        }
+        &_wrap {
+            background-color: #fff;
+        }
+        &_img {
+            overflow: hidden;
+            &:hover {
+                .img-bg {
+                    transform: scale(1.15);
+                }
+            }
+            .img-bg {
+                transition: 0.3s ease;
+                &::after {
+                    padding-top: 254/350 * 100%;
+                }
+            }
+        }
+        &_content {
+            padding: rem(22) rem(20);
+            p,
+            span {
+                color: #9fa9b9;
+            }
+            ul {
+                padding-left: 0;
+                margin-bottom: 0;
+                list-style: none;
+                li {
+                    margin-bottom: 8px;
+                    i.icon {
+                        margin-right: 8px;
+                    }
+                }
+            }
+            .bottom-icons {
+                display: block;
+                display: inline-block;
+                font-size: 13px;
+                font-weight: 700;
+                color: #ff3a6d;
+                text-transform: uppercase;
+                &.close {
+                    p {
+                        color: #ff3a6d;
+                    }
+                }
+                &.open {
+                    p {
+                        color: #acd01a;
+                    }
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &_viewMore {
+        max-width: rem(248);
+        margin-right: auto;
+        margin-left: auto;
     }
 }

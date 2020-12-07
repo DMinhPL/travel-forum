@@ -1,2 +1,22 @@
-@import "icons-ElegantIcons";
-@import "icons-FontAwesomeIcon";
+@import 'icons-ElegantIcons';
+@import 'icons-FontAwesomeIcon';
+@mixin iconBackground($srcImg, $width, $height) {
+    width: $width;
+    height: $height;
+    background-image: url($srcImg);
+}
+i.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &.ic-marker {
+        @include iconBackground('../images/icons/ic-marker.svg', 16px, 16px);
+    }
+    &.ic-smartphone {
+        @include iconBackground('../images/icons/ic-smartphone.svg', 16px, 16px);
+    }
+    &.ic-link {
+        @include iconBackground('../images/icons/ic-link.svg', 16px, 16px);
+    }
+}
