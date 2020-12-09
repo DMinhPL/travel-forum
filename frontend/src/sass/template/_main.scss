@@ -246,3 +246,60 @@
         margin-left: auto;
     }
 }
+.categoryPanel {
+    $root: &;
+    &_item {
+        display: block;
+        padding: 30px;
+        margin: 0 0 30px;
+        text-align: center;
+        text-decoration: none !important;
+        border: 1px solid #e5e7ef;
+        transition: 0.4s ease;
+        &:hover {
+            background-color: #ff3a6d;
+            #{$root}_item-icon {
+                h6 {
+                    color: #fff;
+                }
+                i.icon {
+                    &.ic-automotive {
+                        background-image: url('../images/icons/automotive-white.svg');
+                    }
+                    &.ic-beauty {
+                        background-image: url('../images/icons/beauty-white.svg');
+                    }
+                    &.ic-hotel {
+                        background-image: url('../images/icons/hotel-white.svg');
+                    }
+                    &.ic-restaurant {
+                        background-image: url('../images/icons/restaurant-white.svg');
+                    }
+                    &.ic-shopping {
+                        background-image: url('../images/icons/shopping-white.svg');
+                    }
+                    &.ic-cup {
+                        background-image: url('../images/icons/coffee-cup-white.svg');
+                    }
+                    &.ic-beer {
+                        background-image: url('../images/icons/beer-white.svg');
+                    }
+                    &.ic-destination {
+                        background-image: url('../images/icons/destination-white.svg');
+                    }
+                }
+            }
+        }
+        &-icon {
+            h6 {
+                margin: 10px 0 0;
+                font-size: rem(20);
+                color: #3e434b;
+                transition: 0.4s ease;
+            }
+            i.icon {
+                transition: 0.4s ease;
+            }
+        }
+    }
+}

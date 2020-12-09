@@ -1,0 +1,43 @@
+section.s-section_category
+    - 
+        var cate = [
+            {
+                iconname:'automotive',
+                name:'Automotive'
+            },
+            {
+                iconname:'beauty',
+                name:'Beauty & Spa'
+            },
+            {
+                iconname:'hotel',
+                name:'Hotel'
+            },
+            {
+                iconname:'restaurant',
+                name:'Restaurant'
+            },
+            {
+                iconname:'shopping',
+                name:'Shopping'
+            },
+            {
+                iconname:'cup',
+                name:'Coffee'
+            },
+            {
+                iconname:'beer',
+                name:'Club & Bar'
+            },
+            {
+                iconname:'destination',
+                name:'Destination'
+            },
+        ]
+    .container
+        +titleSection('Browse Categories')
+        .categoryPanel
+            .categoryPanel_wrapper.row
+                each val in cate
+                    .col-lg-3.col-md-4.col-6
+                        +categoryItem(val.iconname, val.name)

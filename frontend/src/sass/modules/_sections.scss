@@ -9,4 +9,7 @@
         @include paddingSection();
         background: #f3f4f7;
     }
+    &_category {
+        @include paddingSection();
+    }
 }

@@ -19,4 +19,28 @@ i.icon {
     &.ic-link {
         @include iconBackground('../images/icons/ic-link.svg', 16px, 16px);
     }
+    &.ic-automotive {
+        @include iconBackground('../images/icons/automotive.svg', 64px, 64px);
+    }
+    &.ic-beauty {
+        @include iconBackground('../images/icons/beauty.svg', 64px, 64px);
+    }
+    &.ic-beer {
+        @include iconBackground('../images/icons/beer.svg', 64px, 64px);
+    }
+    &.ic-cup {
+        @include iconBackground('../images/icons/coffee-cup.svg', 64px, 64px);
+    }
+    &.ic-hotel {
+        @include iconBackground('../images/icons/hotel.svg', 64px, 64px);
+    }
+    &.ic-destination {
+        @include iconBackground('../images/icons/destination.svg', 64px, 64px);
+    }
+    &.ic-restaurant {
+        @include iconBackground('../images/icons/restaurant.svg', 64px, 64px);
+    }
+    &.ic-shopping {
+        @include iconBackground('../images/icons/shopping.svg', 64px, 64px);
+    }
 }

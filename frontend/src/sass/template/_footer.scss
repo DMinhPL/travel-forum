@@ -1,5 +1,13 @@
 // Sample code
 .footer {
-    padding: 30px 0;
-    background-color: #f1f1f1;
+    padding: rem(90) 0;
+    background: #252a33;
+    .copyright {
+        text-align: center;
+        p {
+            margin-bottom: 0;
+            font-size: rem(18);
+            color: #fff;
+        }
+    }
 }

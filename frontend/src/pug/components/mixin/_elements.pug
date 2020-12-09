@@ -94,3 +94,8 @@ mixin featuredPanel(data)
 										span #[=dt.link]
 								.bottom-icons(class=dt.status==='Close Now'?'close':'open')
 									p #[=dt.status]
+mixin categoryItem(iconName, name)
+	a(href="#").categoryPanel_item
+		.categoryPanel_item-icon
+			i.icon(class=`ic-${iconName}`)
+			h6 #[=name]
