@@ -5,31 +5,36 @@ section.s-section_main
                 type:'vertical',
                 title:'Nightlife',
                 listings:'385 listings',
-                srcImg:'/images/find1.jpg'
+                srcImg:'/images/find1.jpg',
+                animate:'fadeInLeft'
             },
             {
                 type:'topBig',
                 title:'Restaurant',
                 listings:'210 listings',
-                srcImg:'/images/find2.jpg'
+                srcImg:'/images/find2.jpg',
+                animate:'fadeInDown'
             },
             {
                 type:'topSmall',
                 title:'Hotel',
                 listings:'577 listings',
-                srcImg:'/images/find4.jpg'
+                srcImg:'/images/find4.jpg',
+                animate:'fadeInRight'
             },
             {
                 type:'botBig',
                 title:'Art&Culture',
                 listings:'79 listings',
-                srcImg:'/images/find5.jpg'
+                srcImg:'/images/find5.jpg',
+                animate:'fadeInUp'
             },
             {
                 type:'botSmall',
                 title:'Outdoors',
                 listings:'114 listings',
-                srcImg:'/images/find3.jpg'
+                srcImg:'/images/find3.jpg',
+                animate:'fadeInUp'
             },
         ]
     .container
@@ -37,7 +42,7 @@ section.s-section_main
         .gridGallery
             .gridGallery-sizer
             each val,idx in gallery
-                .gridGallery_item(class=`gridGallery_item-${val.type}`)
+                .gridGallery_item.wow(class=`gridGallery_item-${val.type} ${val.animate}`)
                     figure.effect-ruby
                         img(src=val.srcImg, alt="gallery")
                         figcaption

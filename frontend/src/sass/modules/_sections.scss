@@ -1,5 +1,8 @@
 @mixin paddingSection() {
     padding: rem(90) 0;
+    @include media-breakpoint-down(md) {
+        padding: rem(35) 0;
+    }
 }
 .s-section {
     &_main {
@@ -7,6 +10,7 @@
     }
     &_featured {
         @include paddingSection();
+        overflow: hidden;
         background: #f3f4f7;
     }
     &_category {
