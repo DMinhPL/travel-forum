@@ -78,9 +78,9 @@ mixin featuredPanel(data)
 						.featuredPanel_rating #[=dt.rating]
 						.featuredPanel_item_wrap
 							.featuredPanel_item_img
-								+img-bg(dt.srcImg,'thumbnail','','#')
+								+img-bg(dt.srcImg,'thumbnail','','/detail.html')
 							.featuredPanel_item_content
-								a(href="#").featuredPanel_item-link #[=dt.place]
+								a(href="/detail.html").featuredPanel_item-link #[=dt.place]
 								p Restaurant • 3 Reviews • $$$$$
 								ul
 									li
@@ -99,3 +99,16 @@ mixin categoryItem(iconName, name)
 		.categoryPanel_item-icon
 			i.icon(class=`ic-${iconName}`)
 			h6 #[=name]
+
+mixin gallery_banner()
+	.gallery-banner
+		.gallery-section.swiper-container#aniimated
+			.grid-gallery.swiper-wrapper
+				.grid-sizer
+				.grid-item.size-vertical.swiper-slide
+					a.img-bg.galleryItem(href="/images/detail1.jpg" data-fancybox="images1" data-caption="This image has a simple caption" style="background-image:url('/images/detail1.jpg')")
+						img(src="/images/detail1.jpg", alt="Image not found")
+				each val in [2,1,3,2]
+					.grid-item.size-horizontal.swiper-slide
+						a.img-bg.galleryItem(href="/images/detail"+val+".jpg",data-fancybox=`images${1}`, data-caption=`This image has a simple caption ${val}` , style="background-image:url('/images/detail"+val+".jpg')")
+							img(src="/images/detail"+val+".jpg", alt="Image not found")

@@ -6,6 +6,15 @@
     z-index: 99;
     margin: 0 auto;
 }
+.headerPage {
+    & > .container-fluid {
+        background: #252a33;
+        opacity: 1;
+    }
+    & + main.wrapper {
+        padding-top: rem(74);
+    }
+}
 .navbar {
     $root: &;
     padding: 0.5rem 0;

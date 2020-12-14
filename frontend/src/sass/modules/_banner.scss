@@ -34,3 +34,52 @@
         }
     }
 }
+.gallery-banner {
+    .gallery-section {
+        .img-bg {
+            position: relative;
+        }
+        .grid-gallery {
+            // @include media-breakpoint-down(sm) {
+            //     height: 100% !important;
+            // }
+            .grid-sizer,
+            .grid-item {
+                width: 25%;
+                border: none;
+                &.size-vertical {
+                    width: 50%;
+                    // @include media-breakpoint-down(sm) {
+                    //     width: 100%;
+                    // }
+                    .img-bg::after {
+                        padding-top: 60.15%;
+                    }
+                }
+                &.size-horizontal {
+                    width: 25%;
+                    @include media-breakpoint-down(sm) {
+                        // width: 100%;
+                        .img-bg::after {
+                            padding-top: 60.15%;
+                        }
+                    }
+                    .img-bg::after {
+                        padding-top: 291/484 * 100%;
+                    }
+                }
+            }
+            .grid-item {
+                display: inline-block;
+                border-radius: 10px;
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                // @include media-breakpoint-down(sm) {
+                //     position: unset !important;
+                // }
+                // &:not(:last-child) {
+                //     pointer-events: none;
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+extends layouts/_layout_default
+
+
+block setting
+    - title = "3Forcom - Detail"
+
+block content 
+    - 
+        var listIcon = ['Bike Parking','Wireless Internet','Smoking Allowed','Street Parking','Special','Accepts credit cards']
+    +gallery_banner
+    .p-detail
+        section.p-detail_evaluate
+            .container
+                .row
+                    .p-detail_evaluate-side.col-lg-7.col-md-7
+                        h5 Tasty Hand-Pulled Noodles
+                        p Innovative cooking, paired with fine wines in a modern setting.
+                    .p-detail_evaluate-side.col-lg-5.col-md-5
+                        .p-detail_evaluate_action
+                            .p-detail_evaluate_action-rating: span 9.5
+                            .review-btn
+                                .btn.btn-outline-danger WRITE A REVIEW
+                                span 34 reviews
+
+        section.p-detail_review
+            .container
+                .row
+                    .col-md-8
+                        .booking-checkbox_wrap
+                            .booking-checkbox
+                                p Tasty Hand-Pulled Noodles is a 1950s style diner located in Madison, Wisconsin. Opened in 1946 by Mickey Weidman, and located just across the street from Camp Randall Stadium, it has become a popular game day tradition amongst
+                                    | many Badger fans. The diner is well known for its breakfast selections, especially the Scrambler, which is a large mound of potatoes, eggs, cheese, gravy, and a patrons’ choice of other toppings.
+                                p Mickies has also been featured on “Todd’s Taste of the Town” during one of ESPN’s college football broadcasts. We are one of the best Chinese restaurants in the New York, New York area. We have been recognized for our outstanding
+                                    | Chinese & Asian cuisine, excellent Chinese menu, and great restaurant specials. We are one of the best Chinese restaurants in the New York, New York area. We have been recognized for our outstanding Chinese & Asian cuisine,
+                                    | excellent Chinese menu, and great restaurant specials.
+                                hr 
+                                ul.listIcons.nav
+                                    each val in listIcon
+                                        li
+                                            i.icon.ic-checked
+                                            span #[=val]
+                    .col-md-4
+                        .contact-info
+                            iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.530887756531!2d106.66729411458839!3d10.77059136224701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edddb818ebf%3A0xfc8c05045f47a3d8!2zVHJ1bmcgVMOibSBUaMawxqFuZyBN4bqhaSBW4bqhbiBI4bqhbmg!5e0!3m2!1svi!2s!4v1607958124289!5m2!1svi!2s'  frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0')
+                            .featuredPanel_item
+                                .featuredPanel_item_content 
+                                    ul
+                                        li 
+                                            i.icon.ic-marker
+                                            span 1301 Avenue, Brooklyn, NY 11230
+                                        li 
+                                            i.icon.ic-smartphone
+                                            a(href="tel:442073368898") +44 20 7336 8898
+                                        li
+                                            i.icon.ic-link
+                                            a(href="https://burgerandlobster.com") https://burgerandlobster.com
+                                        li
+                                            i.icon.ic-link
+                                            span Mon - Sun 09:30 am - 05:30 pm 
+                                            .bottom-icons.open: p Open Now
+

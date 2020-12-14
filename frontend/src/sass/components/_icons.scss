@@ -43,4 +43,7 @@ i.icon {
     &.ic-shopping {
         @include iconBackground('../images/icons/shopping.svg', 64px, 64px);
     }
+    &.ic-checked {
+        @include iconBackground('../images/icons/checked.svg', 14px, 14px);
+    }
 }
