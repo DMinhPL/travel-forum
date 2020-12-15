@@ -38,6 +38,18 @@
     .gallery-section {
         .img-bg {
             position: relative;
+            transition: 0.4s ease;
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                content: '';
+                background-color: rgba(0, 0, 0, 0.3);
+                transition: 0.4s ease;
+                transform: scale(0);
+            }
         }
         .grid-gallery {
             // @include media-breakpoint-down(sm) {
@@ -71,8 +83,16 @@
             }
             .grid-item {
                 display: inline-block;
-                border-radius: 10px;
+                overflow: hidden;
                 transition: transform 0.4s ease, box-shadow 0.4s ease;
+                &:hover {
+                    .img-bg {
+                        transform: scale(1.12);
+                        &::before {
+                            transform: scale(1);
+                        }
+                    }
+                }
                 // @include media-breakpoint-down(sm) {
                 //     position: unset !important;
                 // }

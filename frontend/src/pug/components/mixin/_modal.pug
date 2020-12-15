@@ -9,7 +9,7 @@ mixin modal(title,_id,_class,size)
 	.modal.fade(id=_id,class=_class,tabindex="-1",role="dialog",aria-labelledby=`${_id}Label` aria-hidden="true")
 		.modal-dialog.modal-dialog-centered(role='document',class=`modal-${size}`)
 			.modal-content
-				+modal-head(title,true)
+				+modal-head(title,false)
 				block
 
 
@@ -24,3 +24,22 @@ mixin modal-footer()
 	.modal-footer 
 		button.btn.btn-secondary(type='button', data-dismiss='modal') Close
 		block
+
+mixin modalLogin
+	+modal('Sign in to Listings','modalLogin')
+		.from-content
+			form(action="#").form.form-validate
+				.from-list
+					input(type="email" name='email' placeholder="Email" required)
+				.from-list
+					input#password(type='password' name='password' required placeholder='Password')
+				.tip: a.tip-right(href='/forgotpassword?next=') Forgot password?
+				
+				button(type='submit').btn-custom Sign in
+				
+				p.tip.signup-tip
+					span Don't have an account? &nbsp;
+					a(href='/signup?next=https://www.mockplus.com/blog/post/profile-page-design') Sign up
+
+
+
