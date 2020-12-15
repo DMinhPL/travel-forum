@@ -37,7 +37,18 @@
             },
         });
     }
+    function ratingColor() {
+        const $rating = $('.customer-rating');
+        $rating.each((i, val) => {
+            const score = parseFloat($(val).text());
+            if (score < 6) $(val).css({ backgroundColor: '#ff5a5a' });
+            else if (score <= 7 && score >= 6) $(val).css({ backgroundColor: '#E88100' });
+            else if (score < 8 && score > 7) $(val).css({ backgroundColor: '#DBAB0B' });
+            else $(val).css({ backgroundColor: '#E8E100' });
+        });
+    }
     $(function() {
         $('.grid-gallery').masonry();
+        ratingColor();
     });
 })(jQuery);

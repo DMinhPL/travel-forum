@@ -46,4 +46,7 @@ i.icon {
     &.ic-checked {
         @include iconBackground('../images/icons/checked.svg', 14px, 14px);
     }
+    &.ic-clock {
+        @include iconBackground('../images/icons/clock.svg', 16px, 16px);
+    }
 }
