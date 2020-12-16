@@ -94,6 +94,31 @@ mixin featuredPanel(data)
 										span #[=dt.link]
 								.bottom-icons(class=dt.status==='Close Now'?'close':'open')
 									p #[=dt.status]
+mixin featuredPanel2(data)
+	.featuredPanel.wow.fadeInUp
+		.featuredPanel_wrapper
+			if data && data.length > 0
+				each dt, idx in data
+					.featuredPanel_item
+						//- .featuredPanel_rating #[=dt.rating]
+						.featuredPanel_item_wrap
+							.featuredPanel_item_img
+								+img-bg(dt.srcImg,'thumbnail','','/detail.html')
+							.featuredPanel_item_content
+								a(href="/detail.html").featuredPanel_item-link #[=dt.place]
+								p Restaurant • 3 Reviews • $$$$$
+								ul
+									li
+										i.icon.ic-marker
+										span #[=dt.location]
+									li 
+										i.icon.ic-smartphone
+										span #[=dt.phone]
+									li 
+										i.icon.ic-link
+										span #[=dt.link]
+								.bottom-icons(class=dt.status==='Close Now'?'close':'open')
+									p #[=dt.status]
 mixin categoryItem(iconName, name)
 	a(href="#").categoryPanel_item.wow.zoomIn
 		.categoryPanel_item-icon

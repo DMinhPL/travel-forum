@@ -2,6 +2,14 @@
 .footer {
     padding: rem(90) 0;
     background: #252a33;
+    .imgLogo {
+        max-width: rem(140);
+        margin: auto;
+        margin-bottom: rem(20);
+        img {
+            width: 100%;
+        }
+    }
     .copyright {
         text-align: center;
         p {

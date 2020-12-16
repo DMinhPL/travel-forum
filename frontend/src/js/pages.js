@@ -47,7 +47,22 @@
             else $(val).css({ backgroundColor: '#E8E100' });
         });
     }
+    function upload_avatar(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                $('.avatar-upload #imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('.avatar-upload #imagePreview').hide();
+                $('.avatar-upload #imagePreview').fadeIn(650);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
     $(function() {
+        $('.avatar-upload #imageUpload').change(function() {
+            upload_avatar(this);
+        });
         $('.grid-gallery').masonry();
         ratingColor();
     });

@@ -1,0 +1,74 @@
+extends layouts/_layout_default
+
+
+block setting
+    - title = "Searching"
+    - isLogged = true
+
+block content 
+    - 
+        var dtFeatured = [
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature1.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature2.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'8.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature3.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Open Now',
+                rating:'9.0'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature4.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Open Now',
+                rating:'7.0'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature5.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+            { 
+                place:'Burger & Lobster',
+                srcImg:'/images/feature6.jpg',
+                location:'1301 Avenue, Brooklyn, NY 11230',
+                phone:'+44 20 7336 8898',
+                link:'https://burgerandlobster.com',
+                status:'Close Now',
+                rating:'7.5'
+            },
+        ]
+    section.s-section_featured.p-searchResult
+        .container
+            +titleSection('Search Result')
+            .text-center(style='margin-bottom:50px')
+                h4 Có 6 kết quả
+            +featuredPanel2(dtFeatured)
+            .featuredPanel_viewMore.wow.zoomIn
+                a(href="#").btn-custom Xem thêm
+            

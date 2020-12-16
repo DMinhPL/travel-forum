@@ -18,12 +18,26 @@
     & + main.wrapper {
         padding-top: rem(74);
     }
+    .navbar-brand {
+        img {
+            width: rem(60);
+        }
+    }
 }
 .navbar {
     $root: &;
     padding: 0.5rem 0;
     &-brand {
+        margin-right: 0;
+        margin-left: rem(18);
         font-size: rem(31);
+        img {
+            width: rem(120);
+            transition: 0.4s ease;
+            @include media-breakpoint-down(sm) {
+                width: rem(56);
+            }
+        }
     }
     &-light {
         #{$root}-brand {
@@ -100,6 +114,13 @@
 .is-sticky {
     background: #252a33;
     opacity: 1;
+    .navbar-brand {
+        img {
+            @include media-breakpoint-up(md) {
+                width: rem(75);
+            }
+        }
+    }
 }
 .transition {
     -webkit-transition: all 1s ease-in-out;

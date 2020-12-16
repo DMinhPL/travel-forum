@@ -2,7 +2,13 @@ if !noHeader
     header.nav-menu(class=ishomepage?'':'headerPage')
         .container-fluid.fixed
             .navbar.navbar-expand-lg.navbar-light
-                a.navbar-brand(href="/") Listing
+                if ishomepage
+                    h1
+                        a.navbar-brand(href="/") 
+                            img(src="images/logo.png", alt="vtour")
+                else 
+                    a.navbar-brand(href="/")
+                        img(src="images/logo.png", alt="vtour")
                 button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='true' aria-label='Toggle navigation')
                     +ic-light('icon_menu-square_alt2')
                 .navbar-collapse.justify-content-end.collapse#navbarNavDropdown
@@ -17,7 +23,7 @@ if !noHeader
                                     | Account
                                     +ic-light('arrow_carrot-down')
                                 .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-                                    a.dropdown-item(href='#') Profile
+                                    a.dropdown-item(href='/profile.html') Profile
                                     a.dropdown-item(href='/') Sign out
                         else          
                             li.nav-item

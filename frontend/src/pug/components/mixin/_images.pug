@@ -8,7 +8,7 @@ mixin img(_src, _alt, _class)
 		- var _class = ''
 	unless _alt
 		- var _alt = ''
-	img(src=_src, alt=_alt, class=_class)
+	img(src=_src, alt=_alt, class=_class loading='lazy')
 	
 mixin img-responsive(_src,_alt,_class)
 	unless _class

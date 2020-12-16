@@ -44,7 +44,7 @@ section.s-section_main
             each val,idx in gallery
                 .gridGallery_item.wow(class=`gridGallery_item-${val.type} ${val.animate}`)
                     figure.effect-ruby
-                        img(src=val.srcImg, alt="gallery")
+                        img(src=val.srcImg, alt="gallery" loading='lazy')
                         figcaption
                             h5 #[=val.title]
                             p #[=val.listings]
