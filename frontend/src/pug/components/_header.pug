@@ -1,22 +1,24 @@
-header.nav-menu(class=ishomepage?'':'headerPage')
-    .container-fluid.fixed
-        .navbar.navbar-expand-lg.navbar-light
-            a.navbar-brand(href="/") Listing
-            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='true' aria-label='Toggle navigation')
-                +ic-light('icon_menu-square_alt2')
-            .navbar-collapse.justify-content-end.collapse#navbarNavDropdown
-                ul.navbar-nav
-                    li.nav-item.dropdown
-                        a#navbarDropdownMenuLink.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                            | Explore
-                            +ic-light('arrow_carrot-down')
-                        .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-                            a.dropdown-item(href='#') Action
-                            a.dropdown-item(href='#') Another action
-                            a.dropdown-item(href='#') Something else here
-                    li.nav-item
-                        a.nav-link(href='#') About
-                    li.nav-item
-                        a.nav-link(href='#') Profile
-                    li.nav-item
-                        a.nav-link(href='#modalLogin' data-toggle='modal') Login
+if !noHeader
+    header.nav-menu(class=ishomepage?'':'headerPage')
+        .container-fluid.fixed
+            .navbar.navbar-expand-lg.navbar-light
+                a.navbar-brand(href="/") Listing
+                button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='true' aria-label='Toggle navigation')
+                    +ic-light('icon_menu-square_alt2')
+                .navbar-collapse.justify-content-end.collapse#navbarNavDropdown
+                    ul.navbar-nav
+                        li.nav-item
+                            a.nav-link(href='#') About
+                        if isLogged
+                            li.nav-item.dropdown
+                                a#navbarDropdownMenuLink.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                    .imgAva
+                                        img(src="/images/man.svg", alt="ava")
+                                    | Account
+                                    +ic-light('arrow_carrot-down')
+                                .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+                                    a.dropdown-item(href='#') Profile
+                                    a.dropdown-item(href='/') Sign out
+                        else          
+                            li.nav-item
+                                a.nav-link(href='#modalLogin' data-toggle='modal') Login

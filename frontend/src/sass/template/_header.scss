@@ -1,10 +1,14 @@
 .nav-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    position: relative;
     z-index: 99;
+    width: 100vw;
     margin: 0 auto;
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
 }
 .headerPage {
     & > .container-fluid {
@@ -47,6 +51,18 @@
                 span {
                     font-size: rem(18);
                 }
+                .imgAva {
+                    width: rem(30);
+                    height: rem(30);
+                    margin-right: 7px;
+                    border-radius: 50%;
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
             }
         }
         #{$root}-toggler {
@@ -66,6 +82,12 @@
 }
 .nav-item {
     margin: 0 rem(20) 0 0;
+    &.dropdown {
+        .nav-link {
+            display: flex;
+            align-items: center;
+        }
+    }
     span {
         margin: 0 0 0 4px;
         font-size: rem(10);

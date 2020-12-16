@@ -1,0 +1,27 @@
+extends layouts/_layout_default
+
+
+block setting
+    - title = "Sign up"
+    - noFooter = true
+    - noHeader = true
+    - mainClass = 'mainPage'
+
+block content 
+    section.p-fullscreen(style='background-image:url("/images/travel.png")')
+        .container
+            .form-content.form-content-floating.wow.fadeIn
+                form(action="#").form.form-validate#frmSignUp
+                    .form_title Create a Listings free account
+                    .form-list
+                        input(type="email" name='email' placeholder="Email" required)
+                    .form-list
+                        input#password(type="password" name='password' placeholder="Password(5 - 20 characters)" required)
+                    .form-list
+                        input(type="password" name='confirmPassword' placeholder="Confirm password" required)
+
+                    .group-btn
+                        button(type='submit').btn-custom Continue
+                    p.tip.signup-tip
+                        span Already have an account? &nbsp;
+                        a(href='/') Back to Home

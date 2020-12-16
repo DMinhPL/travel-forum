@@ -27,19 +27,24 @@ mixin modal-footer()
 
 mixin modalLogin
 	+modal('Sign in to Listings','modalLogin')
-		.from-content
+		.form-content
 			form(action="#").form.form-validate
-				.from-list
+				.form-list
 					input(type="email" name='email' placeholder="Email" required)
-				.from-list
-					input#password(type='password' name='password' required placeholder='Password')
-				.tip: a.tip-right(href='/forgotpassword?next=') Forgot password?
-				
-				button(type='submit').btn-custom Sign in
+				.form-list
+					input(type='password' name='passLogin' required placeholder='Password')
+				.tip: a.tip-right(href='/forgotPassword.html') Forgot password?
+				.group-btn
+					button(type='submit').btn-custom Sign in
 				
 				p.tip.signup-tip
 					span Don't have an account? &nbsp;
-					a(href='/signup?next=https://www.mockplus.com/blog/post/profile-page-design') Sign up
+					a(href='signup.html') Sign up
+mixin modalSuccessSent
+	+modal('Successful !','modalSuccessSent')
+		.modal-body
+			p The reset password has sent to your mail
+		+modal-footer
 
 
 

@@ -143,6 +143,5 @@ $('body').imagesLoaded(function() {
     $(function() {
         scrollMenuHeader();
         gridMasonry();
-        new WOW().init();
     });
 })(jQuery);

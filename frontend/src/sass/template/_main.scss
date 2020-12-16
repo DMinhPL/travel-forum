@@ -4,6 +4,19 @@
     text-align: center;
     background-color: #fff;
 }
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+    -webkit-overflow-scrolling: auto;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+main.wrapper {
+    overflow: hidden;
+}
 /* Common style */
 .gridGallery {
     position: relative;
