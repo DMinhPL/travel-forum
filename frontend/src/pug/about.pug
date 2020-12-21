@@ -1,0 +1,48 @@
+extends layouts/_layout_default
+
+
+block setting
+    - title = "VTour - About"
+    - isLogged = true
+
+block content 
+    .p-about
+        .container
+            .row.tm-welcome-row
+                .col-12.tm-page-cols-container
+                    .tm-page-col-left.tm-welcome-box.tm-bg-gradient.wow.fadeInLeft
+                        p.tm-welcome-text
+                            em
+                                | "This is a gradient CSS background #A0c0c0 to #669999 and right
+                                | side is a pink lady parallx image."
+                    .tm-page-col-right.wow.fadeInRight
+                        .tm-welcome-parallax(data-parallax='scroll' data-image-src='/images/squad.jpg')
+            .p-about_content
+                h2.wow.zoomIn About Us
+                p.wow.fadeIn 
+                    | Above pink girl photo is provided by Moose Photos from
+                    | Pexels. This is a tab content area. There are 3 tabs at the
+                    | left side. Curabitur porttitor metus nisl. Nullam nec dictum
+                    | dolor. Sed ultricies purus nec suscipit vulputate. Fusce a
+                    | massa eu orci vulputate varius. Quisque quis ullamcorper
+                    | sapien. Integer eu luctus nulla, vel viverra odio.
+                p.wow.fadeIn
+                    | Above pink girl photo is provided by Moose Photos from
+                    | Pexels. This is a tab content area. There are 3 tabs at the
+                    | left side. Curabitur porttitor metus nisl. Nullam nec dictum
+                    | dolor. Sed ultricies purus nec suscipit vulputate. Fusce a
+                    | massa eu orci vulputate varius. Quisque quis ullamcorper
+                    | sapien. Integer eu luctus nulla, vel viverra odio.
+                .p-about_panel.wow.fadeInUp
+                    +aboutItem('/images/man.jpg','New Hudson', 'Project Manage')
+                    +aboutItem('/images/man.jpg','New Hudson', 'Project Manage')
+                    +aboutItem('/images/man.jpg','New Hudson', 'Project Manage')
+                    
+                  
+block js
+    script.  
+        (function($){
+            $(function() {
+                $('.tm-welcome-parallax').parallax();
+            })
+        })(jQuery);

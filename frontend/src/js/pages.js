@@ -49,7 +49,6 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-
     $(function() {
         $('.avatar-upload #imageUpload').change(function() {
             upload_avatar(this);

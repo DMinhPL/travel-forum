@@ -81,7 +81,10 @@ mixin featuredPanel(data)
 								+img-bg(dt.srcImg,'thumbnail','','/detail.html')
 							.featuredPanel_item_content
 								a(href="/detail.html").featuredPanel_item-link #[=dt.place]
-								p Restaurant • 3 Reviews • $$$$$
+								p 
+									span Restaurant 
+									span • 3 Reviews 
+									span • $$$$$
 								ul
 									li
 										i.icon.ic-marker
@@ -158,3 +161,10 @@ mixin commentPanel(score)
 				p I love the noodles here but it is so rare that I get to come here. Tasty Hand-Pulled Noodles is the best type of whole in the wall restaurant. The staff are really nice, and you should be seated quickly. I usually get the
 					| hand pulled noodles in a soup. House Special #1 is amazing and the lamb noodles are also great. If you want your noodles a little chewier, get the knife cut noodles, which are also amazing. Their dumplings are great
 					| dipped in their chili sauce.
+
+mixin aboutItem(srcImg, name, role)
+	.p-about_panel-info
+		.p-about_panel-img
+			+img-bg(srcImg,'people')
+			h4 #[=name]
+			p #[=role]
