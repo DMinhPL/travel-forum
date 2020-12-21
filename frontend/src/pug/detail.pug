@@ -2,7 +2,7 @@ extends layouts/_layout_default
 
 
 block setting
-    - title = "3Forcom - Detail"
+    - title = "VTour - Detail"
     - isLogged = true
 
 block content 
@@ -39,7 +39,7 @@ block content
                         .p-detail_evaluate_action
                             .p-detail_evaluate_action-rating: span 9.5
                             .review-btn
-                                .btn.btn-outline-danger WRITE A REVIEW
+                                a(href="#modalReviewHandle" data-toggle='modal').btn.btn-outline-danger WRITE A REVIEW
                                 span 34 reviews
 
         section.p-detail_review
@@ -67,6 +67,7 @@ block content
                             +commentPanel('5.0')
                             hr
                             +commentPanel('10')
+                            #template-groups-append
                                         //- span 28 people marked this review as helpful
                     .col-lg-4
                         .contact-info.onShowDesktop
@@ -87,4 +88,57 @@ block content
                                             i.icon.ic-clock
                                             span Mon - Sun 09:30 am - 05:30 pm 
                                             .bottom-icons.open: p Open Now
+        script(type="text/x-custom-template")#template-groups-html
+            hr
+            +commentPanel('7.5')
 
+        
+
+block modal
+    +modalReviewHandle
+
+block js
+    script. 
+        (function($){
+            function rangeSlider(){
+                $("#rangeRating").ionRangeSlider({
+                    grid: true,
+                    min: 0,
+                    skin: "big",
+                    max: 10,
+                    from: 5,
+                    to: 10,
+                    step: 0.5,
+                    onChange: function (data) {
+                        // fired on every range slider update
+                    },
+                    onFinish: function (data) {
+                        // fired on pointer release
+                    },
+                });
+            }
+            function appendReviewTemplate(){
+                $('#frmReview').on('submit', (e)=>{
+                    e.preventDefault();
+                    if(!$('#frmReview').valid()) return;
+                    $('#modalReviewHandle').modal('hide');
+
+                    //append template review 
+                    const $template = $('#template-groups-html');
+                    const $html = $($template.html());
+                    const $target = $('#template-groups-append');
+                    
+                    //get content inputs
+                    const content = $('#frmReview textarea.form-control').val();
+                    const title = $('#frmReview input[type="text"].form-control').val();
+                    //apply data input 
+                    $target.append($html);
+                    $html.find('.customer-content h6').text(title);
+                    $html.find('.customer-text p').text(content);
+                 });
+            }
+            $(function(){
+                rangeSlider();
+                appendReviewTemplate();
+            })
+        })(jQuery);

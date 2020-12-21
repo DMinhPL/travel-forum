@@ -45,6 +45,21 @@ mixin modalSuccessSent
 		.modal-body
 			p The reset password has sent to your mail
 		+modal-footer
+mixin modalReviewHandle
+	+modal('Viết bình luận','modalReviewHandle')
+		.modal-body
+			//- p The reset password has sent to your mail
+			form(action="#").form-content.form-validate#frmReview
+				.form-group
+					input(type="text" name='title' placeholder="Nhập tiêu đề, ví dụ: Món ăn ở đây thật tuyệt!").form-control
+				.form-group.mb-20
+					textarea.form-control(name='review' rows='6' required)
+				hr
+				.form-group
+					label(name='rangeRating') Đánh giá
+					input(type="text" name="rangeRating")#rangeRating
+				.form-group(style='text-align: center')
+					button(type='submit').btn-form Hoàn tất
 
 
 

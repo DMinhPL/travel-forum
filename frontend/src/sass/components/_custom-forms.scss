@@ -377,6 +377,20 @@
             font-weight: 700;
         }
     }
+    .form-group {
+        position: relative;
+        textarea {
+            resize: none;
+        }
+        label.error {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            margin-bottom: 0;
+            font-size: rem(10);
+            color: red;
+        }
+    }
     .form-list {
         position: relative;
         margin-bottom: rem(24);

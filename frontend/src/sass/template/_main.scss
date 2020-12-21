@@ -240,6 +240,7 @@ main.wrapper {
                 color: #ff3a6d;
                 text-transform: uppercase;
                 &.close {
+                    float: none;
                     p {
                         color: #ff3a6d;
                     }
@@ -317,4 +318,7 @@ main.wrapper {
             }
         }
     }
+}
+.mb-20 {
+    margin-bottom: rem(20);
 }

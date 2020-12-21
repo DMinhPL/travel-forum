@@ -175,3 +175,15 @@
         max-width: $modal-lg;
     }
 }
+#modalReviewHandle {
+    .modal {
+        &-dialog {
+            @include media-breakpoint-up(md) {
+                max-width: rem(900);
+            }
+        }
+        &-header {
+            border: none;
+        }
+    }
+}

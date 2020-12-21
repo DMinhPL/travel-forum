@@ -1,6 +1,19 @@
 // eslint-disable-next-line no-console
 console.log('Common All Page');
 (function($) {
+    function ui_matchHeight() {
+        $('.featuredPanel_item_content').matchHeight();
+    }
+    function ratingColor(dom) {
+        const $rating = $(dom);
+        $rating.each((i, val) => {
+            const score = parseFloat($(val).text());
+            if (score < 6) $(val).css({ backgroundColor: '#ff5a5a' });
+            else if (score <= 7 && score >= 6) $(val).css({ backgroundColor: '#E88100' });
+            else if (score < 8 && score > 7) $(val).css({ backgroundColor: '#DBAB0B' });
+            else $(val).css({ backgroundColor: '#E8E100' });
+        });
+    }
     $(function() {
         const msg = 'This field is required.';
 
@@ -52,5 +65,8 @@ console.log('Common All Page');
             });
         });
         new WOW().init();
+        ui_matchHeight();
+        ratingColor('.customer-rating');
+        ratingColor('.featuredPanel_rating');
     });
 })(jQuery);
